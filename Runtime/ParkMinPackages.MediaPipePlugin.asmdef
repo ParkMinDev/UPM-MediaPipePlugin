@@ -1,0 +1,14 @@
+{
+  "name": "ParkMinPackages.MediaPipePlugin",
+  "rootNamespace": "ParkMinPackages.MediaPipePlugin",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
