@@ -1,7 +1,13 @@
 {
   "name": "ParkMinPackages.MediaPipePlugin",
   "rootNamespace": "ParkMinPackages.MediaPipePlugin",
-  "references": [],
+  "references": [
+    "ParkMinPackages.Foundation",
+    "R3",
+    "R3.Unity",
+    "UniTask",
+    "GUID:47a84ebde4ec47fabb620b30cc7a3e5c"
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,

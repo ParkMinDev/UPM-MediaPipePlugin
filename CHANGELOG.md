@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.0] - 2026-08-30
+
+- Added native Pose Landmarker bindings for image and video inference.
+- Added project settings, model importing, model loading, and build-time model inclusion.
+- Added reusable Skeleton, SkeletonCollection, landmark, and pose result APIs.
+- Added image, video, and web camera Skeleton runners and source utilities.
+- Added Skeleton, video, and web camera UGUI views with rotation, mirroring, and aspect-ratio support.
+- Added largest-person and center-nearest Skeleton selectors.
+- Added Foundation, R3, UniTask, UGUI, and Unity Video dependency declarations.
+
 ## [0.1.0] - 2026-08-27
 
 - Added the initial Unity package structure.

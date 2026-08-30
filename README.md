@@ -1,12 +1,16 @@
 # ParkMinPackages.MediaPipePlugin
 
-Unity-facing MediaPipe runtime APIs, task runners, source adapters, platform settings, and lifecycle management.
+Unity-facing MediaPipe pose inference APIs, task runners, source adapters, platform settings, model management, and UGUI views.
 
 The package consumes platform binaries and model assets from `ParkMinPackages.MediaPipe.NativeRuntime`. Native build sources remain outside the installable `UPMPackage` directory in the `ParkMinPackages/MediaPipe-NativeRuntime` repository.
 
-## Status
+## Features
 
-This repository currently contains the initial Unity package structure. Runtime APIs and runners will be implemented after the native ABI and artifact layout are established.
+- Image, video, and web camera pose inference runners
+- Reusable single-person and multi-person Skeleton destinations
+- Skeleton selection by on-screen size or proximity to the screen center
+- UGUI Skeleton, video, and web camera views
+- Project-wide MediaPipe model registration and build-time inclusion
 
 ## Dependency
 
