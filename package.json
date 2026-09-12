@@ -1,7 +1,7 @@
 {
   "name": "com.parkminpackages.mediapipeplugin",
   "displayName": "ParkMinPackages.MediaPipePlugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "documentationUrl": "https://github.com/ParkMinPackages/MediaPipePlugin#readme",
   "changelogUrl": "https://github.com/ParkMinPackages/MediaPipePlugin/blob/main/CHANGELOG.md",

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1] - 2026-09-12
+
+### Fixed
+- Released VideoSkeletonRunner subscriptions and owned frame textures without stopping the injected VideoPlayer during disposal.
+- Destroyed the owned WebCamTexture during disposal without querying playback state or calling Stop; explicit Close behavior is unchanged.
+
 ## [0.2.0] - 2026-08-30
 
 - Added native Pose Landmarker bindings for image and video inference.

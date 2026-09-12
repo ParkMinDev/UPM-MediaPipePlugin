@@ -69,7 +69,10 @@ namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
 		}
 
 		public override void Dispose() {
-			Stop();
+			_updateSubscription?.Dispose();
+			_updateSubscription = null;
+			IsRunning = false;
+			_playRequested = false;
 
 			if (_frameTexture != null)
 				UnityEngine.Object.Destroy(_frameTexture);

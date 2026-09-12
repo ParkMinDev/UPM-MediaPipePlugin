@@ -55,7 +55,10 @@ namespace ParkMinPackages.MediaPipePlugin.Objects
 		}
 
 		public void Dispose() {
-			Close();
+			if (_webCamTexture != null)
+				UnityEngine.Object.Destroy(_webCamTexture);
+
+			_webCamTexture = null;
 		}
 
 		public void Close() {
