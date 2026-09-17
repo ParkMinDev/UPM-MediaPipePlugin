@@ -11,11 +11,17 @@ using UnityEngine.Video;
 
 namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
 {
-	[Serializable]
 	public sealed class VideoSkeletonRunner : SkeletonRunner
 	{
 		// - Construct -
-		public VideoSkeletonRunner() {
+		public VideoSkeletonRunner(Setting setting) : this(
+			setting != null ? setting.Model : throw new ArgumentNullException(nameof(setting)),
+			setting.MinPoseDetectionConfidence,
+			setting.MinPosePresenceConfidence,
+			setting.MinTrackingConfidence,
+			setting.VideoPlayer,
+			setting.Loop
+		) {
 		}
 
 		public VideoSkeletonRunner(
@@ -97,14 +103,13 @@ namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
 		public bool IsRunning { get; private set; }
 
 		// - Internals -
-		[SerializeField, Required] VideoPlayer _videoPlayer;
-		[SerializeField] bool _loop = true;
-
 		protected override PoseLandmarkerRunningMode RunningMode
 		{
 			get { return PoseLandmarkerRunningMode.Video; }
 		}
 
+		[NonSerialized] VideoPlayer _videoPlayer;
+		[NonSerialized] bool _loop;
 		[NonSerialized] Texture2D _frameTexture;
 		[NonSerialized] IDisposable _updateSubscription;
 		[NonSerialized] long _lastFrame = -1;
@@ -154,6 +159,76 @@ namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
 			}
 
 			return _frameTexture;
+		}
+
+		// - Class Struct Enum -
+		[Serializable]
+		public sealed class Setting
+		{
+			// - Construct -
+			public Setting() {
+			}
+
+			public Setting(
+				MediaPipeModelAsset model,
+				float minPoseDetectionConfidence,
+				float minPosePresenceConfidence,
+				float minTrackingConfidence,
+				VideoPlayer videoPlayer,
+				bool loop
+			) {
+				Model = model;
+				MinPoseDetectionConfidence = minPoseDetectionConfidence;
+				MinPosePresenceConfidence = minPosePresenceConfidence;
+				MinTrackingConfidence = minTrackingConfidence;
+				VideoPlayer = videoPlayer;
+				Loop = loop;
+			}
+
+			// - Public Properties -
+			public MediaPipeModelAsset Model
+			{
+				get { return _model; }
+				set { _model = value; }
+			}
+
+			public float MinPoseDetectionConfidence
+			{
+				get { return _minPoseDetectionConfidence; }
+				set { _minPoseDetectionConfidence = Mathf.Clamp01(value); }
+			}
+
+			public float MinPosePresenceConfidence
+			{
+				get { return _minPosePresenceConfidence; }
+				set { _minPosePresenceConfidence = Mathf.Clamp01(value); }
+			}
+
+			public float MinTrackingConfidence
+			{
+				get { return _minTrackingConfidence; }
+				set { _minTrackingConfidence = Mathf.Clamp01(value); }
+			}
+
+			public VideoPlayer VideoPlayer
+			{
+				get { return _videoPlayer; }
+				set { _videoPlayer = value; }
+			}
+
+			public bool Loop
+			{
+				get { return _loop; }
+				set { _loop = value; }
+			}
+
+			// - Internals -
+			[SerializeField, Required] MediaPipeModelAsset _model;
+			[SerializeField, Range(0f, 1f)] float _minPoseDetectionConfidence = 0.5f;
+			[SerializeField, Range(0f, 1f)] float _minPosePresenceConfidence = 0.5f;
+			[SerializeField, Range(0f, 1f)] float _minTrackingConfidence = 0.5f;
+			[SerializeField, Required] VideoPlayer _videoPlayer;
+			[SerializeField] bool _loop = true;
 		}
 	}
 }

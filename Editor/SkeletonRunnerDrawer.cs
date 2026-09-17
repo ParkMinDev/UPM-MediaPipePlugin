@@ -6,6 +6,7 @@ using UnityEngine;
 namespace ParkMinPackages.MediaPipePlugin.Editor
 {
 	[CustomPropertyDrawer(typeof(SkeletonRunner), true)]
+	[CustomPropertyDrawer(typeof(VideoSkeletonRunner.Setting))]
 	internal sealed class SkeletonRunnerDrawer : PropertyDrawer
 	{
 		// - Statics -

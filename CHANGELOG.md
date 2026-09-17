@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0] - 2026-09-17
+
+### Changed
+- Moved VideoSkeletonRunner serialization into the reusable VideoSkeletonRunner.Setting type.
+- Constructed each VideoSkeletonRunner with independent runtime state while copying configuration from its Setting.
+- Added inspector support for serialized VideoSkeletonRunner.Setting fields.
+
 ## [0.2.1] - 2026-09-12
 
 ### Fixed
