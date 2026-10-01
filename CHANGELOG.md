@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1] - 2026-10-01
+
+### Fixed
+- Aligned ParkMin dependency declarations with the release versions: com.parkminpackages.foundation 10.1.2.
+
 ## [0.3.0] - 2026-09-17
 
 ### Changed
