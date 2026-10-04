@@ -6,8 +6,8 @@
       "gitDependencies": [
         {
           "packageName": "com.parkmindev.mediapipenativeruntime.upm",
-          "version": "0.1.5",
-          "url": "https://github.com/ParkMinDev/MediaPipe-NativeRuntime.git?path=/UPM"
+          "version": "0.1.6",
+          "url": "https://github.com/ParkMinDev/MediaPipeNativeRuntime.git?path=/UPM"
         },
         {
           "packageName": "com.parkmindev.upm.foundation",

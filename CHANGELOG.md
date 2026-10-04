@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.7] - 2026-10-04
+
+### Changed
+- Updated the NativeRuntime Git URL to MediaPipeNativeRuntime and synchronized its dependency version to 0.1.6.
+
 ## [0.3.6] - 2026-10-04
 
 ### Changed

@@ -1,7 +1,7 @@
 {
   "name": "com.parkmindev.upm.mediapipeplugin",
   "displayName": "ParkMinDev.UPM.MediaPipePlugin",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "license": "MIT",
   "documentationUrl": "https://github.com/ParkMinDev/UPM-MediaPipePlugin#readme",
   "changelogUrl": "https://github.com/ParkMinDev/UPM-MediaPipePlugin/blob/main/CHANGELOG.md",
