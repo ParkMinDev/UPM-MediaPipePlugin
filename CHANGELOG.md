@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.5] - 2026-10-04
+
+### Changed
+- Standardized package identity and display name as `com.parkmindev.upm.mediapipeplugin` / `ParkMinDev.UPM.MediaPipePlugin`.
+- Synchronized own-package dependency versions for this release; C# namespaces and assembly names remain unchanged.
+
 ## [0.3.4] - 2026-10-04
 
 ### Changed

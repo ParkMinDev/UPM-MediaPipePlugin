@@ -1,4 +1,4 @@
-# ParkMinPackages.MediaPipePlugin
+# ParkMinDev.UPM.MediaPipePlugin
 
 Unity-facing MediaPipe pose inference APIs, task runners, source adapters, platform settings, model management, and UGUI views.
 
