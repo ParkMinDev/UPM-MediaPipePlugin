@@ -1,11 +1,11 @@
 {
   "name": "com.parkminpackages.mediapipeplugin",
   "displayName": "ParkMinPackages.MediaPipePlugin",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
-  "documentationUrl": "https://github.com/ParkMinDev/MediaPipePlugin#readme",
-  "changelogUrl": "https://github.com/ParkMinDev/MediaPipePlugin/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/ParkMinDev/MediaPipePlugin/blob/main/LICENSE.md",
+  "documentationUrl": "https://github.com/ParkMinDev/UPM-MediaPipePlugin#readme",
+  "changelogUrl": "https://github.com/ParkMinDev/UPM-MediaPipePlugin/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ParkMinDev/UPM-MediaPipePlugin/blob/main/LICENSE.md",
   "unity": "6000.5",
   "description": "Unity-facing MediaPipe runtime APIs and workflow integrations backed by ParkMinPackages native artifacts.",
   "dependencies": {

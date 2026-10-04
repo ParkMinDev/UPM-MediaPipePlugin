@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.3] - 2026-10-04
+
+### Changed
+- Renamed the repository to UPM-MediaPipePlugin and updated repository links without changing the Unity package identity, namespaces, assemblies, or asset GUIDs.
+- Updated ParkMin dependency repository URLs and synchronized their final release versions in parkmin-upm.json.
+
 ## [0.3.2] - 2026-10-04
 
 ### Changed
