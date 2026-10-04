@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.4] - 2026-10-04
+
+### Changed
+- Updated the native runtime dependency to 0.1.3 and its Git package path to /UPM.
+- Updated native runtime installation documentation without changing runtime APIs.
+
 ## [0.3.3] - 2026-10-04
 
 ### Changed
