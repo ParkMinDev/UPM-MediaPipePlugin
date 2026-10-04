@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "packagePath": "",
+      "gitDependencies": [
+        {
+          "packageName": "com.parkminpackages.mediapipe.nativeruntime",
+          "version": "0.1.2",
+          "url": "https://github.com/ParkMinDev/MediaPipe-NativeRuntime.git?path=/UPMPackage"
+        },
+        {
+          "packageName": "com.parkminpackages.foundation",
+          "version": "10.1.3",
+          "url": "https://github.com/ParkMinDev/Foundation.git"
+        },
+        {
+          "packageName": "com.cysharp.unitask",
+          "version": "2.5.11",
+          "url": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.5.11"
+        },
+        {
+          "packageName": "com.cysharp.r3",
+          "version": "1.3.1",
+          "url": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity#1.3.1"
+        }
+      ],
+      "nugetDependencies": []
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Unity-facing MediaPipe pose inference APIs, task runners, source adapters, platform settings, model management, and UGUI views.
 
-The package consumes platform binaries and model assets from `ParkMinPackages.MediaPipe.NativeRuntime`. Native build sources remain outside the installable `UPMPackage` directory in the `ParkMinPackages/MediaPipe-NativeRuntime` repository.
+The package consumes platform binaries and model assets from `ParkMinPackages.MediaPipe.NativeRuntime`. Native build sources remain outside the installable `UPMPackage` directory in the `ParkMinDev/MediaPipe-NativeRuntime` repository.
 
 ## Features
 
@@ -17,5 +17,5 @@ The package consumes platform binaries and model assets from `ParkMinPackages.Me
 Install the native runtime package through ParkMinPackages Package Manager before using this package.
 
 ```text
-https://github.com/ParkMinPackages/MediaPipe-NativeRuntime.git?path=/UPMPackage
+https://github.com/ParkMinDev/MediaPipe-NativeRuntime.git?path=/UPMPackage
 ```

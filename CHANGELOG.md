@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.2] - 2026-10-04
+
+### Changed
+- Moved repository links and dependency URLs to ParkMinDev while preserving the package identity.
+- Replaced repository dependency metadata with parkmin-upm.json and aligned ParkMin dependency release versions.
+
 ## [0.3.1] - 2026-10-01
 
 ### Fixed
