@@ -1,14 +1,15 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.Objects;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Objects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects.Runners
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Objects.Runners", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "SkeletonRunner")]
 	[Serializable]
 	public abstract class SkeletonRunner : IDisposable
 	{

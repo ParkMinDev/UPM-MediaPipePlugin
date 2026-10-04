@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEngine;
 #if UNITY_ANDROID && !UNITY_EDITOR
 using UnityEngine.Networking;
@@ -13,7 +13,7 @@ using UnityEngine.Networking;
 using UnityEditor;
 #endif
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public static class MediaPipeModelLoader
 	{

@@ -1,9 +1,9 @@
-using ParkMinPackages.MediaPipePlugin.Objects.Runners;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.Objects.Runners;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
 	[CustomPropertyDrawer(typeof(SkeletonRunner), true)]
 	[CustomPropertyDrawer(typeof(VideoSkeletonRunner.Setting))]

@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using ParkMinPackages.MediaPipePlugin.Objects;
+using ParkMinDev.UPM.MediaPipePlugin.Objects;
 
-namespace ParkMinPackages.MediaPipePlugin.Native
+namespace ParkMinDev.UPM.MediaPipePlugin.Native
 {
 	internal static class MediaPipeNativeLibrary
 	{

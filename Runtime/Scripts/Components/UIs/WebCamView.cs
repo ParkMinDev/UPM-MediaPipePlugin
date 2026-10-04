@@ -1,12 +1,13 @@
-using ParkMinPackages.Foundation.Components;
-using ParkMinPackages.Foundation.Constants;
-using ParkMinPackages.Foundation.Interfaces;
+using ParkMinDev.UPM.Foundation.Components;
+using ParkMinDev.UPM.Foundation.Constants;
+using ParkMinDev.UPM.Foundation.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ParkMinPackages.MediaPipePlugin.Components.UIs
+namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Components.UIs", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "WebCamView")]
 	public sealed class WebCamView : ExtendedBehaviour, IR3Updatable
 	{
 		// - Public Methods -

@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor.PackageManager;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
 	public static class PoseLandmarkerModelPath
 	{

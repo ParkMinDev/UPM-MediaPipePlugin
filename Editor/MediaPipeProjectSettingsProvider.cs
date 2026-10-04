@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
 	internal static class MediaPipeProjectSettingsProvider
 	{

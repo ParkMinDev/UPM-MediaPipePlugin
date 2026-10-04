@@ -1,8 +1,8 @@
 {
-  "name": "ParkMinPackages.MediaPipePlugin",
-  "rootNamespace": "ParkMinPackages.MediaPipePlugin",
+  "name": "ParkMinDev.UPM.MediaPipePlugin",
+  "rootNamespace": "ParkMinDev.UPM.MediaPipePlugin",
   "references": [
-    "ParkMinPackages.Foundation",
+    "ParkMinDev.UPM.Foundation",
     "R3",
     "R3.Unity",
     "UniTask",

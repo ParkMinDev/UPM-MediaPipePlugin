@@ -3,8 +3,9 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Objects", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "WebCamTextureSource")]
 	[Serializable]
 	public sealed class WebCamTextureSource : IDisposable
 	{

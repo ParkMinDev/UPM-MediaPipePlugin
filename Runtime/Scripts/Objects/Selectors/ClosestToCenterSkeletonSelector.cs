@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects.Selectors
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects.Selectors
 {
 	public sealed class ClosestToCenterSkeletonSelector : SkeletonSelector
 	{

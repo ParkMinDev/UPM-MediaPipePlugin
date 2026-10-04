@@ -1,4 +1,4 @@
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public sealed class MediaPipeModelData
 	{

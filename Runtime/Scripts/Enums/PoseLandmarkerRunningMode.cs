@@ -1,4 +1,4 @@
-namespace ParkMinPackages.MediaPipePlugin.Enums
+namespace ParkMinDev.UPM.MediaPipePlugin.Enums
 {
 	public enum PoseLandmarkerRunningMode
 	{

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ParkMinPackages.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public static class PoseSkeletonDefinition
 	{

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEditor;
 using UnityEditor.Build;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
 	internal sealed class MediaPipeModelBuildProcessor : BuildPlayerProcessor
 	{

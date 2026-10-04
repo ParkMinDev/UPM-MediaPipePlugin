@@ -1,7 +1,8 @@
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.ScriptableObjects
+namespace ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.ScriptableObjects", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "MediaPipeModelAsset")]
 	public sealed class MediaPipeModelAsset : ScriptableObject
 	{
 		// - Public Properties -

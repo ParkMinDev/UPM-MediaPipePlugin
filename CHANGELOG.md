@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0] - 2026-10-04
+
+### Changed
+- Breaking: moved namespaces and assembly names from `ParkMinPackages.MediaPipePlugin` to `ParkMinDev.UPM.MediaPipePlugin` while preserving namespace suffixes and asset GUIDs.
+- Updated package references, assembly friend declarations, serialized type identifiers, and final dependency versions.
+- Added previous type-location metadata where applicable and preserved existing MovedFrom history.
+
 ## [0.3.7] - 2026-10-04
 
 ### Changed

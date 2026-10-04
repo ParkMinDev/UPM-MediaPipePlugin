@@ -1,8 +1,8 @@
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
 	internal static class MediaPipeProjectSettingsCommands
 	{

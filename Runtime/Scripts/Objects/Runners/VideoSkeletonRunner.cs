@@ -1,15 +1,15 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.Objects;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Objects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using R3;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects.Runners
 {
 	public sealed class VideoSkeletonRunner : SkeletonRunner
 	{
@@ -162,6 +162,7 @@ namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
 		}
 
 		// - Class Struct Enum -
+		[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Objects.Runners", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "VideoSkeletonRunner+Setting")]
 		[Serializable]
 		public sealed class Setting
 		{

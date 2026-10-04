@@ -1,7 +1,7 @@
 using System;
-using ParkMinPackages.MediaPipePlugin.Native;
+using ParkMinDev.UPM.MediaPipePlugin.Native;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public sealed class MediaPipeNativeException : Exception
 	{

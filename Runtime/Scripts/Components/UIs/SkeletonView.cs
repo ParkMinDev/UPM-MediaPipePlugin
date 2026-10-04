@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ParkMinPackages.Foundation.Constants;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.Objects;
+using ParkMinDev.UPM.Foundation.Constants;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Objects;
 using R3;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ParkMinPackages.MediaPipePlugin.Components.UIs
+namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Components.UIs", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "SkeletonView")]
 	[DisallowMultipleComponent, RequireComponent(typeof(RectTransform))]
 	public sealed class SkeletonView : MonoBehaviour
 	{

@@ -1,8 +1,8 @@
 {
-  "name": "ParkMinPackages.MediaPipePlugin.Editor",
-  "rootNamespace": "ParkMinPackages.MediaPipePlugin.Editor",
+  "name": "ParkMinDev.UPM.MediaPipePlugin.Editor",
+  "rootNamespace": "ParkMinDev.UPM.MediaPipePlugin.Editor",
   "references": [
-    "ParkMinPackages.MediaPipePlugin"
+    "ParkMinDev.UPM.MediaPipePlugin"
   ],
   "includePlatforms": [
     "Editor"

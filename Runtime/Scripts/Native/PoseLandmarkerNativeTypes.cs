@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace ParkMinPackages.MediaPipePlugin.Native
+namespace ParkMinDev.UPM.MediaPipePlugin.Native
 {
 	// - Class Struct Enum -
 	internal enum MpStatus

@@ -1,10 +1,11 @@
 using System;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects.Runners
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects.Runners
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Objects.Runners", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "ImageSkeletonRunner")]
 	[Serializable]
 	public sealed class ImageSkeletonRunner : SkeletonRunner
 	{

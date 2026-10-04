@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using ParkMinPackages.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
 using R3;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public sealed class Skeleton : IDisposable
 	{

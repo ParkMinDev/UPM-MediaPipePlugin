@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.Native;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Native;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public sealed class PoseLandmarkerResult
 	{
 		// - Class Struct Enum -
+		[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Objects", sourceAssembly: "ParkMinPackages.MediaPipePlugin", sourceClassName: "PoseLandmarkerResult+Landmark")]
 		[Serializable]
 		public readonly struct Landmark
 		{

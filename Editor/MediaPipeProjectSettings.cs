@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Editor", sourceAssembly: "ParkMinPackages.MediaPipePlugin.Editor", sourceClassName: "MediaPipeProjectSettings")]
 	[FilePath("ProjectSettings/ParkMinPackages.MediaPipePluginSettings.asset", FilePathAttribute.Location.ProjectFolder)]
 	internal sealed class MediaPipeProjectSettings : ScriptableSingleton<MediaPipeProjectSettings>
 	{

@@ -1,12 +1,13 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using ParkMinPackages.MediaPipePlugin.ScriptableObjects;
+using ParkMinDev.UPM.MediaPipePlugin.ScriptableObjects;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Editor
+namespace ParkMinDev.UPM.MediaPipePlugin.Editor
 {
+	[UnityEngine.Scripting.APIUpdating.MovedFrom(true, sourceNamespace: "ParkMinPackages.MediaPipePlugin.Editor", sourceAssembly: "ParkMinPackages.MediaPipePlugin.Editor", sourceClassName: "MediaPipeModelImporter")]
 	[ScriptedImporter(1, "task")]
 	public sealed class MediaPipeModelImporter : ScriptedImporter
 	{

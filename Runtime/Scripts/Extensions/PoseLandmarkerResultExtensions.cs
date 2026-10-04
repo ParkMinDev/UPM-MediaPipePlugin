@@ -1,8 +1,8 @@
 using System;
-using ParkMinPackages.MediaPipePlugin.Enums;
-using ParkMinPackages.MediaPipePlugin.Objects;
+using ParkMinDev.UPM.MediaPipePlugin.Enums;
+using ParkMinDev.UPM.MediaPipePlugin.Objects;
 
-namespace ParkMinPackages.MediaPipePlugin.Extensions
+namespace ParkMinDev.UPM.MediaPipePlugin.Extensions
 {
 	public static class PoseLandmarkerResultExtensions
 	{

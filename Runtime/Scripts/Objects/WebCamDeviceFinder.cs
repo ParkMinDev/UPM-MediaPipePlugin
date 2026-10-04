@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ParkMinPackages.MediaPipePlugin.Objects
+namespace ParkMinDev.UPM.MediaPipePlugin.Objects
 {
 	public static class WebCamDeviceFinder
 	{
