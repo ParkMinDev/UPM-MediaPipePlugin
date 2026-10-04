@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.6] - 2026-10-04
+
+### Changed
+- Updated NativeRuntime package discovery and dependency metadata to `com.parkmindev.mediapipenativeruntime.upm` version 0.1.5.
+
 ## [0.3.5] - 2026-10-04
 
 ### Changed

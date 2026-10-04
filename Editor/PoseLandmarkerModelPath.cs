@@ -8,7 +8,7 @@ namespace ParkMinPackages.MediaPipePlugin.Editor
 	public static class PoseLandmarkerModelPath
 	{
 		// - Statics -
-		const string NativeRuntimePackageName = "com.parkmindev.mediapipe.nativeruntime.upm";
+		const string NativeRuntimePackageName = "com.parkmindev.mediapipenativeruntime.upm";
 		const string LiteModelRelativePath = "Runtime/Models/PoseLandmarker/pose_landmarker_lite.task";
 
 		public static string Lite
