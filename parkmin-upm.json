@@ -5,6 +5,11 @@
       "packagePath": "",
       "gitDependencies": [
         {
+          "packageName": "com.parkmindev.upm.ugui",
+          "version": "16.1.0",
+          "url": "https://github.com/ParkMinDev/UPM-UGUI.git"
+        },
+        {
           "packageName": "com.parkmindev.mediapipenativeruntime.upm",
           "version": "0.1.7",
           "url": "https://github.com/ParkMinDev/MediaPipeNativeRuntime.git?path=/UPM"

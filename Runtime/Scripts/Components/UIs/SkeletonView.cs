@@ -5,7 +5,9 @@ using ParkMinDev.UPM.Foundation.Constants;
 using ParkMinDev.UPM.MediaPipePlugin.Enums;
 using ParkMinDev.UPM.MediaPipePlugin.Objects;
 using R3;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
@@ -31,6 +33,8 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 
 			_skeletonSubscription?.Dispose();
 			_skeleton = skeleton;
+			_normalizedTorsoLength = 0f;
+			_lastSizeUpdateTime = 0d;
 			_skeletonSubscription = skeleton.Updated.Subscribe(_ => RenderSkeleton());
 			RenderSkeleton();
 		}
@@ -39,6 +43,8 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 			_skeletonSubscription?.Dispose();
 			_skeletonSubscription = null;
 			_skeleton = null;
+			_normalizedTorsoLength = 0f;
+			_lastSizeUpdateTime = 0d;
 			HideVisuals();
 		}
 
@@ -89,6 +95,10 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 			get { return _isVerticallyFlipped; }
 		}
 
+		public float CurrentLandmarkSize { get { return GetDisplaySizes().x; } }
+		public float CurrentLineThickness { get { return GetDisplaySizes().y; } }
+		public float CurrentTorsoSize { get { return _normalizedTorsoLength * RectTransform.rect.height; } }
+
 		// - Handler -
 		void Awake() {
 			_rectTransform = (RectTransform)transform;
@@ -124,16 +134,25 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 #endif
 
 		// - Internals -
-		[Header(Headers.Optional)]
+		[Title(Headers.Optional)]
 		[SerializeField] Sprite _landmarkSprite;
 		[SerializeField] Sprite _lineSprite;
 
-		[Header(Headers.Settings)]
-		[SerializeField, Min(1f)] float _landmarkSize = 16f;
-		[SerializeField, Min(1f)] float _lineThickness = 5f;
+		[Title(Headers.Settings)]
 		[SerializeField, Range(0f, 1f)] float _minimumVisibility = 0.5f;
 		[SerializeField] Color _landmarkColor = new Color(0f, 0.85f, 1f, 1f);
 		[SerializeField] Color _lineColor = Color.white;
+
+		[Title("Visibility")]
+		[SerializeField] List<SkeletonLandmarkId> _hiddenLandmarks = new List<SkeletonLandmarkId>();
+
+		[Title("Relative Size")]
+		[SerializeField, FormerlySerializedAs("_landmarkToTorsoRatio"), Min(0.001f), Tooltip("Joint diameter as a fraction of the displayed shoulder-to-hip length.")] float _relativeLandmarkSize = 0.1f;
+		[SerializeField, FormerlySerializedAs("_lineToTorsoRatio"), Min(0.001f), Tooltip("Line thickness as a fraction of the displayed shoulder-to-hip length.")] float _relativeLineThickness = 0.03f;
+
+		[FoldoutGroup("Advanced Settings"), SerializeField] Vector2 _landmarkSizeLimits = new Vector2(3f, 32f);
+		[FoldoutGroup("Advanced Settings"), SerializeField] Vector2 _lineThicknessLimits = new Vector2(1f, 10f);
+		[FoldoutGroup("Advanced Settings"), SerializeField, Min(0f)] float _sizeSmoothingTime = 0.15f;
 
 		[SerializeField, HideInInspector] RectTransform _lineContainer;
 		[SerializeField, HideInInspector] RectTransform _landmarkContainer;
@@ -148,6 +167,8 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 		int _rotationAngle;
 		bool _isHorizontallyFlipped;
 		bool _isVerticallyFlipped;
+		float _normalizedTorsoLength;
+		double _lastSizeUpdateTime;
 
 		void RenderSkeleton() {
 			if (_skeleton == null || !_skeleton.IsDetected) {
@@ -157,21 +178,48 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 
 			Rect rect = RectTransform.rect;
 
+			// Person scale
+			if (rect.height > 0f) {
+				float torsoLength = 0f;
+				int torsoSideCount = 0;
+				if (_skeleton.TryGetLandmark(SkeletonLandmarkId.LeftShoulder, out SkeletonLandmark leftShoulder) && IsVisible(leftShoulder) && _skeleton.TryGetLandmark(SkeletonLandmarkId.LeftHip, out SkeletonLandmark leftHip) && IsVisible(leftHip)) {
+					torsoLength += Vector2.Distance(ToAnchoredPosition(leftShoulder.Position, rect), ToAnchoredPosition(leftHip.Position, rect));
+					torsoSideCount++;
+				}
+				if (_skeleton.TryGetLandmark(SkeletonLandmarkId.RightShoulder, out SkeletonLandmark rightShoulder) && IsVisible(rightShoulder) && _skeleton.TryGetLandmark(SkeletonLandmarkId.RightHip, out SkeletonLandmark rightHip) && IsVisible(rightHip)) {
+					torsoLength += Vector2.Distance(ToAnchoredPosition(rightShoulder.Position, rect), ToAnchoredPosition(rightHip.Position, rect));
+					torsoSideCount++;
+				}
+
+				double now = Time.realtimeSinceStartupAsDouble;
+				if (torsoSideCount > 0 && torsoLength > Mathf.Epsilon) {
+					float targetLength = torsoLength / torsoSideCount / rect.height;
+					float blend = Application.isPlaying && _normalizedTorsoLength > 0f && _sizeSmoothingTime > 0f ? 1f - Mathf.Exp(-(float)(now - _lastSizeUpdateTime) / _sizeSmoothingTime) : 1f;
+					_normalizedTorsoLength = Mathf.Lerp(_normalizedTorsoLength, targetLength, blend);
+				}
+				_lastSizeUpdateTime = now;
+			}
+			Vector2 displaySizes = GetDisplaySizes();
+
+			// Landmarks
 			for (int index = 0; index < _renderedLandmarkIds.Count; index++) {
 				Image landmarkImage = _landmarkImages[index];
-				bool visible = _skeleton.TryGetLandmark(_renderedLandmarkIds[index], out SkeletonLandmark landmark) && IsVisible(landmark);
+				bool visible = _skeleton.TryGetLandmark(_renderedLandmarkIds[index], out SkeletonLandmark landmark) && IsVisible(landmark) && !_hiddenLandmarks.Contains(_renderedLandmarkIds[index]);
 				landmarkImage.gameObject.SetActive(visible);
 
-				if (visible)
+				if (visible) {
+					landmarkImage.rectTransform.sizeDelta = new Vector2(displaySizes.x, displaySizes.x);
 					landmarkImage.rectTransform.anchoredPosition = ToAnchoredPosition(landmark.Position, rect);
+				}
 			}
 
+			// Connections
 			for (int index = 0; index < _renderedConnections.Count; index++) {
 				SkeletonConnection connection = _renderedConnections[index];
 				Image lineImage = _lineImages[index];
 				bool hasStart = _skeleton.TryGetLandmark(connection.Start, out SkeletonLandmark start);
 				bool hasEnd = _skeleton.TryGetLandmark(connection.End, out SkeletonLandmark end);
-				bool visible = hasStart && IsVisible(start) && hasEnd && IsVisible(end);
+				bool visible = hasStart && IsVisible(start) && hasEnd && IsVisible(end) && !_hiddenLandmarks.Contains(connection.Start) && !_hiddenLandmarks.Contains(connection.End);
 				lineImage.gameObject.SetActive(visible);
 
 				if (!visible)
@@ -182,7 +230,7 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 				Vector2 direction = endPosition - startPosition;
 				RectTransform lineTransform = lineImage.rectTransform;
 				lineTransform.anchoredPosition = (startPosition + endPosition) * 0.5f;
-				lineTransform.sizeDelta = new Vector2(direction.magnitude, _lineThickness);
+				lineTransform.sizeDelta = new Vector2(direction.magnitude, displaySizes.y);
 				lineTransform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 			}
 		}
@@ -214,6 +262,7 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 			_renderedLandmarkIds = landmarkIds.ToArray();
 			_renderedConnections = connections.ToArray();
 			ApplyStyle();
+			RenderSkeleton();
 		}
 
 		RectTransform GetOrCreateContainer(RectTransform container, string containerName, int siblingIndex) {
@@ -264,7 +313,6 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 					continue;
 				landmarkImage.sprite = _landmarkSprite;
 				landmarkImage.color = _landmarkColor;
-				landmarkImage.rectTransform.sizeDelta = new Vector2(_landmarkSize, _landmarkSize);
 			}
 
 			foreach (Image lineImage in _lineImages) {
@@ -273,6 +321,13 @@ namespace ParkMinDev.UPM.MediaPipePlugin.Components.UIs
 				lineImage.sprite = _lineSprite;
 				lineImage.color = _lineColor;
 			}
+		}
+
+		Vector2 GetDisplaySizes() {
+			float torsoLength = CurrentTorsoSize;
+			float minimumLandmarkSize = Mathf.Max(0.1f, _landmarkSizeLimits.x);
+			float minimumLineThickness = Mathf.Max(0.1f, _lineThicknessLimits.x);
+			return new Vector2(Mathf.Clamp(torsoLength * _relativeLandmarkSize, minimumLandmarkSize, Mathf.Max(minimumLandmarkSize, _landmarkSizeLimits.y)), Mathf.Clamp(torsoLength * _relativeLineThickness, minimumLineThickness, Mathf.Max(minimumLineThickness, _lineThicknessLimits.y)));
 		}
 
 		bool IsVisible(SkeletonLandmark landmark) {

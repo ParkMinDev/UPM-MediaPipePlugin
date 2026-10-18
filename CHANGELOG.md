@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.0] - 2026-10-19
+
+### Added
+- Added SkeletonAngleView and per-angle options to create and reuse child AngleGraphics for configured landmark triplets.
+- Added SkeletonLandmarkAnchor for positioning arbitrary UI targets relative to tracked landmarks, with matching display rotation, mirroring and confidence thresholds.
+- Added configurable hidden landmarks and exposed the generated angle graphics for external label composition.
+
+### Changed
+- Replaced fixed skeleton sizes with smoothed torso-relative joint and connection sizes, configurable limits and simplified Inspector sections.
+- Declared UGUI 16.1.0, which provides the AngleGraphic and AngleGraphicOptions APIs used by the new runtime assembly reference.
+
 ## [0.4.0] - 2026-10-04
 
 ### Changed

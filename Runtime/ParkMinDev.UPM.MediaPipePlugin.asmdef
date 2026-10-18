@@ -3,6 +3,7 @@
   "rootNamespace": "ParkMinDev.UPM.MediaPipePlugin",
   "references": [
     "ParkMinDev.UPM.Foundation",
+    "ParkMinDev.UPM.UGUI",
     "R3",
     "R3.Unity",
     "UniTask",
