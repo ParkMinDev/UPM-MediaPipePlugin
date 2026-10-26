@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.1] - 2026-10-26
+
+### Changed
+- Align exact dependencies to Foundation 12.0.0 and UGUI 16.1.1. No runtime code changes.
+
 ## [0.5.0] - 2026-10-19
 
 ### Added
