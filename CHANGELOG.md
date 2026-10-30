@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.3] - 2026-10-31
+
+### Changed
+- Align the exact UGUI dependency to 16.2.0, including ContentSizeFitter2 and its Unity UI 2.6.0 requirement.
+
 ## [0.5.2] - 2026-10-27
 
 ### Changed
