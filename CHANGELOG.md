@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.4] - 2026-10-31
+
+### Changed
+- Align the exact UGUI dependency to 16.3.0 for optional-Canvas UIActivator support and inspector utilities.
+
 ## [0.5.3] - 2026-10-31
 
 ### Changed
